@@ -1,0 +1,232 @@
+/* ========== Theme Vars ========== */
+:root{
+  --bg:#0a0b0f;          /* 背景（ほぼ黒） */
+  --panel:#0f1117;       /* パネル */
+  --text:#dbe1ff;        /* 本文 */
+  --muted:#9aa3b2;       /* 補助 */
+  --primary:#5ae1ff;     /* ネオンブルー */
+  --accent:#ff3d6e;      /* ネオンピンク */
+  --grad:linear-gradient(135deg,var(--primary),var(--accent));
+  --radius:16px;
+  --shadow:0 10px 30px rgba(0,0,0,.5);
+  --container:1100px;
+}
+
+/* ========== Base Reset ========== */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+img{max-width:100%; display:block}
+a{color:var(--text); text-decoration:none}
+.container{width:min(92%, var(--container)); margin-inline:auto}
+.section{padding:72px 0}
+.section.alt{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0))}
+.section-title{font-family:Orbitron, Inter, sans-serif; font-size:28px; letter-spacing:.04em; margin:0 0 28px}
+
+/* Skip link */
+.skip-link{position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden}
+.skip-link:focus{left:16px; top:16px; width:auto; height:auto; background:#000; color:#fff; padding:8px 12px; border-radius:8px}
+
+/* ========== Header / Nav ========== */
+.site-header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(120%) blur(8px);}
+[data-blur]{background:rgba(10,11,15,.4); border-bottom:1px solid rgba(255,255,255,.06)}
+.nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+.brand{display:flex; align-items:center; gap:10px; font-weight:800}
+
+
+/* logo */
+.brand img{
+  height: 36px;     /* 見えるサイズにUP */
+  width: auto;      /* 縦横比を維持 */
+  display: block;
+  object-fit: contain;
+  /* もしPNGに透明余白が多い場合でも、視覚的に詰めたいなら下を追加 */
+  /* filter: drop-shadow(0 0 8px rgba(90,225,255,.35));  ←発光したい時用（任意） */
+}
+
+
+
+.nav-menu{display:flex; align-items:center; gap:18px}
+.nav-menu a{opacity:.9}
+.nav-menu .btn{margin-left:6px}
+
+.nav-toggle{display:none; background:none; border:0; cursor:pointer}
+.nav-toggle .bar{display:block; width:22px; height:2px; background:#fff; margin:5px 0}
+
+/* Buttons */
+.btn{display:inline-flex; align-items:center; gap:8px; padding:12px 18px; border-radius:999px; border:1px solid rgba(255,255,255,.16)}
+.btn-primary{background:var(--grad); color:#0b0d12; font-weight:700}
+.btn-ghost{background:transparent}
+.btn:hover{transform:translateY(-1px)}
+
+
+
+
+
+
+/* ========== Hero ========== */
+.hero{position:relative; min-height:78vh; display:grid; place-items:center; padding-top:56px}
+
+/* 1) 変数のデフォ（通常表示用） */
+:root { --hero-pos: 35%; }
+
+/* 2) hero で変数を使う */
+.hero-bg{
+  position:absolute; inset:0;
+  background: url('assets/hero.jpg') center var(--hero-pos) / cover no-repeat;
+  filter: brightness(.6);
+}
+
+/* 3) 画面が縦に広い時（フルスクリーン想定）にだけ下げる */
+@media (min-height: 800px) {
+  :root { --hero-pos: 45%; }
+}
+/* もっと広い時はさらに下げる（任意） */
+@media (min-height: 920px) {
+  :root { --hero-pos: 52%; }
+}
+/* 外部ディスプレイなど横も広い場合に限定したいなら */
+@media (min-width: 1280px) and (min-height: 800px) {
+  :root { --hero-pos: 50%; }
+}
+
+
+
+
+
+
+.hero-overlay{position:absolute; inset:0; background:radial-gradient(1200px 800px at 50% 30%, rgba(90,225,255,.25), transparent 60%)}
+.hero-content{position:relative; text-align:center}
+.eyebrow{letter-spacing:.2em; color:var(--primary); font-weight:600}
+.title{font-family:Orbitron, Inter, sans-serif; font-size: clamp(36px, 6vw, 72px); line-height:1.02; margin:10px 0}
+.title .glow{background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:0 0 32px rgba(90,225,255,.35)}
+.subtitle{color:var(--muted); margin:10px 0 24px}
+.cta{display:flex; gap:12px; justify-content:center}
+
+
+
+/* Neon frame */
+.neon-frame{
+  position:absolute; inset:26px 18px 18px; border-radius:24px; pointer-events:none;
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 0 0 1px rgba(255,255,255,.04), 0 0 60px rgba(90,225,255,.12);
+}
+
+/* Scanline */
+.scanline{height:2px; width:220px; margin:28px auto 0; background:var(--grad); border-radius:999px; animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+/* ========== Features / Cards ========== */
+.grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+.card{background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow)}
+.card h3{margin:0 0 6px; font-size:20px}
+.card p{margin:0; color:#c6ccdd}
+
+/* ========== Schedule / Timeline ========== */
+.timeline{list-style:none; margin:0; padding:0; border-left:2px solid rgba(255,255,255,.1); padding-left:18px}
+.timeline li{display:grid; grid-template-columns:80px 16px 1fr; align-items:center; gap:16px; padding:12px 0}
+.timeline .time{color:#b7c0d0; font-weight:600}
+.timeline .dot{width:10px; height:10px; border-radius:50%; background:var(--grad)}
+
+/* ========== Venue ========== */
+.two-col{display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:center}
+.meta{padding:0; margin:14px 0; list-style: none; color:#c6ccdd}
+.map img{border-radius:var(--radius); border:1px solid rgba(255,255,255,.08)}
+
+/* ========== Gallery ========== */
+.gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:8px}
+.gallery img{aspect-ratio:16/10; object-fit:cover; border-radius:12px; border:1px solid rgba(255,255,255,.06)}
+
+/* ========== FAQ ========== */
+.faq{background:var(--panel); border:1px solid rgba(255,255,255,.08); border-radius:12px; padding:14px 16px; margin-bottom:10px}
+.faq summary{cursor:pointer; font-weight:600}
+.faq[open]{border-color:rgba(90,225,255,.35)}
+
+/* ========== CTA ========== */
+.cta-section{padding:86px 0}
+.cta-card{
+  background:radial-gradient(600px 300px at 20% 20%, rgba(90,225,255,.12), transparent), var(--panel);
+  border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:32px; text-align:center; box-shadow:var(--shadow)
+}
+.cta-title{font-family:Orbitron, Inter, sans-serif; margin:0 0 8px}
+
+/* ========== Footer ========== */
+.site-footer{padding:28px 0; border-top:1px solid rgba(255,255,255,.06)}
+.footer-grid{display:flex; align-items:center; justify-content:space-between}
+.footer-grid nav a{margin-left:12px; opacity:.8}
+
+/* ========== Responsive ========== */
+@media (max-width: 900px){
+  .grid-3{grid-template-columns:1fr}
+  .two-col{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr}
+}
+@media (max-width: 680px){
+  .nav-toggle{display:block}
+  .nav-menu{
+    position:absolute; right:16px; top:56px; background:#0b0d12;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:12px; padding:10px; display:none; flex-direction:column; gap:10px
+  }
+  .nav-menu.show{display:flex}
+  .gallery{grid-template-columns:1fr}
+}
+
+
+
+
+/* Nav links hover animation */
+/* リンク全体を感知範囲広めに */
+.nav-menu a {
+  position: relative;
+  display: inline-block;
+  padding: 12px 20px;   /* ← 感知範囲を広げる */
+  transform-style: preserve-3d;
+  perspective: 600px;   /* 3D効果 */
+  transition: transform 0.8s ease;
+}
+
+/* 中のテキスト用ラッパー */
+.nav-menu a span {
+  display: inline-block;
+  transform: translateZ(20px); /* 常に正面を向く */
+}
+
+/* hoverで親だけ回転 */
+.nav-menu a:hover {
+  transform: translateY(-6px) rotateY(360deg);
+  color: var(--primary);
+  text-shadow: 0 6px 18px rgba(90,225,255,.35);
+}
+
+
+
+/* styles.css の一番下とかでもOK */
+.nav-menu a {
+  position: relative;
+  display: inline-block;
+  padding: 12px 20px;   /* ← 感知範囲を広げる */
+  transform-style: preserve-3d;
+  perspective: 600px;   /* 3D効果 */
+  transition: transform 0.8s ease;
+}
+
+.nav-menu a span {
+  display: inline-block;
+  transform: translateZ(20px); /* 常に正面を向く */
+}
+
+.nav-menu a:hover {
+  transform: translateY(-6px) rotateY(360deg);
+  color: var(--primary);
+  text-shadow: 0 6px 18px rgba(90,225,255,.35);
+}
+
+
+
