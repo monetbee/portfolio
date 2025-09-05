@@ -45,6 +45,15 @@ header.site{
   border:1px solid var(--line);background:rgba(2,6,23,.35);
   transition:.2s; cursor:pointer; color:var(--text)
 }
+
+.logo-img {
+  height: 40px;   /* ロゴの高さ。お好みで調整 (40〜60pxくらい) */
+  width: auto;    /* 横比率は自動で合わせる */
+  display: block;
+}
+
+
+
 .btn:hover{transform:translateY(-1px);border-color:rgba(148,163,184,.35)}
 .btn.primary{
   background:linear-gradient(135deg,var(--brand),var(--brand-2));
