@@ -36,30 +36,26 @@ main { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
+/* カード全体からはみ出さない */
 .card {
-  background: white;
+  overflow: hidden;           /* 重要 */
   border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.12);
 }
 
-
+/* サムネ枠：高さを決めておく（16:9に揃える） */
 .thumb {
   width: 100%;
-  height: 180px;          /* サムネの高さを揃える */
-  overflow: hidden;       /* はみ出した部分を隠す */
-  border-radius: 8px;
+  aspect-ratio: 16 / 9;       /* 好みで 4/3 や 1/1 に変更OK */
+  overflow: hidden;           /* 重要 */
+  border-radius: 12px;
 }
 
+/* 画像は枠いっぱいに、はみ出す分はトリミング */
 .thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;      /* 枠いっぱいに収める（トリミングされる） */
+  object-fit: cover;          /* contain にすると全部入る（余白出る） */
+  display: block;             /* 余計な隙間を消す */
 }
 
 .card h3 { margin: 0 0 6px; font-size: 1.2rem; }
