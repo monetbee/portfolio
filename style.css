@@ -197,3 +197,26 @@ footer {
   color: #94a3b8;
   font-size: 0.85rem;
 }
+
+/* 画面全体の背景を完全に白にする */
+body {
+  background-color: #ffffff !important;
+}
+
+/* カードの背景を白にしつつ、綺麗な影（立体感）を維持する */
+.section-card {
+  background-color: #ffffff !important;
+  border: none !important; /* 枠線だけ消す */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important; /* ふんわりした影を残す */
+  border-radius: 12px; /* 角をほんのり丸くしてスタイリッシュに */
+}
+
+/* ヘッダー下の線や見出しの小さな横線を消す */
+.site-header {
+  border-bottom: none !important;
+}
+
+.section-card h2::after,
+h2::after {
+  display: none !important;
+}
