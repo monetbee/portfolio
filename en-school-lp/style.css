@@ -99,13 +99,11 @@ nav a:hover {
   font-weight: bold;
 }
 
-/* --- ヒーローセクション --- */
-
-/* --- ヒーローセクション（レスポンシブ＆霧がかった演出） --- */
-.hero-modern {
+/* --- ヒーローセクション（背景動画・霧がかった演出・レスポンシブ対応） --- */
+.hero {
   position: relative;
   width: 100%;
-  min-height: 85vh; /* スマホやPCで十分な高さを確保 */
+  min-height: 85vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -113,7 +111,7 @@ nav a:hover {
   padding: 60px 0;
 }
 
-/* 動画のレスポンシブ対応（スマホ・PCどちらでも画面いっぱいに美しくフィット） */
+/* 動画のレスポンシブ・自動フィット設定 */
 .hero-video {
   position: absolute;
   top: 50%;
@@ -123,9 +121,9 @@ nav a:hover {
   width: auto;
   height: auto;
   transform: translate(-50%, -50%);
-  object-fit: cover; /* 縦横比を保ったまま枠いっぱいに拡大・縮小 */
+  object-fit: cover;
   z-index: 0;
-  opacity: 0.3; /* 動画自体の透明度 */
+  opacity: 0.3;
 }
 
 /* 霧がかった（白っぽくふんわり馴染ませる）グラデーションオーバーレイ */
@@ -135,29 +133,15 @@ nav a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  /* 中央に向かって少し明るく、周りがふんわり白っぽくなる霧状のグラデーション */
   background: radial-gradient(circle at center, rgba(255, 255, 255, 0.75) 0%, rgba(240, 249, 255, 0.95) 100%);
   z-index: 1;
 }
 
-/* コンテンツ（文言）を動画とオーバーレイの前面に重ねる */
-.hero-modern .container {
+/* コンテンツ（文言）を前面に配置 */
+.hero .container {
   position: relative;
   z-index: 2;
   width: 100%;
-}
-
-/* スマホ表示時の微調整 */
-@media (max-width: 768px) {
-  .hero-modern {
-    min-height: auto;
-    padding: 40px 0;
-  }
-}
-
-.hero {
-  background: var(--bg-accent);
-  padding: 80px 0;
 }
 
 .hero .inner {
@@ -280,7 +264,8 @@ section {
   color: var(--text-muted);
   margin-bottom: 48px;
 }
-/* 安心バッジのスタイル */
+
+/* --- 安心バッジのスタイル --- */
 .hero-trust-badges {
   display: flex;
   gap: 16px;
@@ -291,7 +276,7 @@ section {
   color: #0369a1;
 }
 
-/* キャンペーンカードのスタイル */
+/* --- キャンペーンカードのスタイル --- */
 .campaign-banner-section {
   padding: 60px 0;
   background-color: #f8fafc;
@@ -364,6 +349,10 @@ section {
 
 /* --- レスポンシブ --- */
 @media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 40px 0;
+  }
   .hero .inner {
     grid-template-columns: 1fr;
     text-align: center;
