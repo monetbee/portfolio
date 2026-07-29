@@ -298,77 +298,21 @@ section {
   color: #0369a1;
 }
 
-/* --- キャンペーンセクション（ページ全体に自然に馴染ませる） --- */
+/* --- キャンペーンセクション（完全にフラットにする） --- */
 .campaign-banner-section {
   padding: 80px 0;
-  background-color: var(--bg-primary);
+  background-color: var(--bg-primary); /* 背景をページ全体と同じ白にする */
 }
 
 .campaign-card {
   max-width: 1100px;
   margin: 0 auto;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 0;
+  background: none;        /* 水色のグラデーション背景を完全に消す */
+  border: none;            /* 枠線を消す */
+  border-radius: 0;        /* 角丸を消す */
+  padding: 0;              /* 余白をリセット */
   text-align: center;
-  box-shadow: none;
-}
-
-.campaign-badge {
-  display: inline-block;
-  background-color: #bae6fd;
-  color: #0369a1;
-  font-size: 0.85rem;
-  font-weight: 600;
-  padding: 6px 12px;
-  border-radius: 999px;
-  margin-bottom: 20px;
-}
-
-.campaign-card h2 {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--text-main);
-  margin-bottom: 12px;
-}
-
-.campaign-card p {
-  color: var(--text-muted);
-  font-size: 1rem;
-  margin-bottom: 40px;
-}
-
-.campaign-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
-  margin-bottom: 40px;
-  text-align: left;
-}
-
-.campaign-item {
-  background: var(--bg-secondary);
-  padding: 32px;
-  border-radius: 16px;
-  border: 1px solid var(--line);
-}
-
-.campaign-item h3 {
-  font-size: 1.15rem;
-  font-weight: bold;
-  color: var(--text-main);
-  margin-bottom: 10px;
-}
-
-.campaign-item p {
-  font-size: 0.95rem;
-  margin-bottom: 0;
-  color: var(--text-muted);
-}
-
-.campaign-cta {
-  margin-top: 20px;
+  box-shadow: none;        /* 影を消す */
 }
 
 /* --- レスポンシブ --- */
