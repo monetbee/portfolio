@@ -100,6 +100,61 @@ nav a:hover {
 }
 
 /* --- ヒーローセクション --- */
+
+/* --- ヒーローセクション（レスポンシブ＆霧がかった演出） --- */
+.hero-modern {
+  position: relative;
+  width: 100%;
+  min-height: 85vh; /* スマホやPCで十分な高さを確保 */
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: #f0f9ff;
+  padding: 60px 0;
+}
+
+/* 動画のレスポンシブ対応（スマホ・PCどちらでも画面いっぱいに美しくフィット） */
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover; /* 縦横比を保ったまま枠いっぱいに拡大・縮小 */
+  z-index: 0;
+  opacity: 0.3; /* 動画自体の透明度 */
+}
+
+/* 霧がかった（白っぽくふんわり馴染ませる）グラデーションオーバーレイ */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* 中央に向かって少し明るく、周りがふんわり白っぽくなる霧状のグラデーション */
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.75) 0%, rgba(240, 249, 255, 0.95) 100%);
+  z-index: 1;
+}
+
+/* コンテンツ（文言）を動画とオーバーレイの前面に重ねる */
+.hero-modern .container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* スマホ表示時の微調整 */
+@media (max-width: 768px) {
+  .hero-modern {
+    min-height: auto;
+    padding: 40px 0;
+  }
+}
+
 .hero {
   background: var(--bg-accent);
   padding: 80px 0;
