@@ -162,6 +162,27 @@ body {
   gap: 0.5rem;
 }
 
+/* 実案件バッジのデザイン */
+.badge-client {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #047857; /* 深みのあるグリーン */
+  background-color: #ecfdf5; /* 薄いグリーン */
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  vertical-align: middle;
+  margin-left: 0.5rem;
+  border: 1px solid #a7f3d0;
+}
+
+/* 案件の補足説明文 */
+.project-desc {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+}
+
 /* ボタン装飾 */
 .btn {
   display: inline-block;
