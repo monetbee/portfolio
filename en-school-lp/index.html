@@ -1,78 +1,43 @@
 <!DOCTYPE html>
-
 <html lang="ja">
-
 <head>
-
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EN School | 1日30分で英会話を習慣化</title>
-
-  <!-- SEO & OGP -->
-  <meta name="description" content="1日30分で英会話を習慣化。完全オンライン／8週間スプリント。今なら無料体験実施中。">
-  <meta property="og:title" content="EN School | 1日30分で英会話を習慣化">
-  <meta property="og:description" content="完全オンライン・短時間×高頻度。無料体験レッスン受付中。">
-  <meta property="og:type" content="website">
-
-
-  <link rel="stylesheet" href="style.css?v=1">
-
+  <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-  <body>
-  <!-- ここから本文 -->
-  <header class="site">
-    <div class="container nav">
-      <div class="logo">
-        <img src="../assets/en-school_logo.svg" alt="EN School ロゴ" class="logo-img">
-        <span class="logo-dot"></span>
-        <span>EN School</span>
-      </div>
-      <nav class="links" aria-label="Main">
-        <a href="#features" class="btn">特徴</a>
-        <a href="#pricing" class="btn">料金</a>
-        <a href="#faq" class="btn">FAQ</a>
-        <a href="#cta" class="btn primary cta">無料体験</a>
+  <!-- ヘッダー -->
+  <header>
+    <div class="container">
+      <div class="logo">EN School</div>
+      <nav>
+        <a href="#campaign">特典</a>
+        <a href="#cta" class="nav-cta">無料体験</a>
       </nav>
     </div>
   </header>
 
-     <!-- ヒーローセクション（改善版） -->
-<section class="hero-modern">
+  <!-- ヒーローセクション（背景動画 ＆ 霧がかった演出） -->
+  <section class="hero">
+    <!-- 背景ループ動画 -->
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="hero-video.mp4" type="video/mp4">
+    </video>
+    <!-- 霧がかった白っぽいオーバーレイ -->
+    <div class="hero-overlay"></div>
 
-  <!-- 背景ループ動画 -->
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="hero-video.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div> <!-- 文字を見やすくするための薄いオーバーレイ -->
-
-  <div class="container inner">
-    <div class="hero-text">
-      <span class="badge-tag">初月50%OFFキャンペーン実施中</span>
-      <h1 class="title">3日坊主で終わらない。<br>1日30分の<span>次世代型</span>英会話。</h1>
-      <p class="lead">「英語を話したい」その気持ちに、毎日のAIコーチングと短時間レッスンで確かな結果を。スマホだけで、今日から始められます。</p>
-      
-      <div class="hero-trust-badges">
-        <span>・ レッスン中のしつこい勧誘は一切なし</span>
-        <span>・ クレジットカード登録不要無料体験</span>
-      </div>
-
-      <div class="cta-row">
-        <a href="#cta" class="btn-primary">無料で体験レッスンを予約する</a>
-      </div>
-      <span class="hero-note">1分で簡単に予約完了！</span>
-    </div>
-
-    <div class="container hero-container">
+    <div class="container inner">
       <div class="hero-text">
-        <span class="badge-tag">初月50%OFFキャンペーン実施中</span>
+        <span class="badge-tag">🔥 初月50%OFFキャンペーン実施中</span>
         <h1 class="title">3日坊主で終わらない。<br>1日30分の<span>次世代型</span>英会話。</h1>
         <p class="lead">「英語を話したい」その気持ちに、毎日のAIコーチングと短時間レッスンで確かな結果を。スマホだけで、今日から始められます。</p>
         
-        <!-- 安心＆魅力を伝えるバッジリスト -->
+        <!-- 安心・信頼バッジ -->
         <div class="hero-trust-badges">
-          <span>・ レッスン中のしつこい勧誘は一切なし</span>
-          <span>・ クレジットカード登録不要無料体験</span>
+          <span>🛡 レッスン中のしつこい勧誘は一切なし</span>
+          <span>✨ クレジットカード登録不要</span>
         </div>
 
         <div class="cta-row">
@@ -81,7 +46,7 @@
         <span class="hero-note">1分で簡単に予約完了！</span>
       </div>
 
-      <!-- 右側のビジュアルカード -->
+      <!-- 右側ビジュアル -->
       <div class="hero-art">
         <div class="screen">
           <div class="bar">
@@ -96,73 +61,42 @@
         </div>
       </div>
     </div>
+  </section>
 
-</section>
-
-  <section class="hero" aria-label="Hero">
-    <div class="container inner">
-      <div>
-        <div class="eyebrow"><span class="ping"></span> 完全オンライン・毎日30分</div>
-        <h1 class="title" data-reveal>1日30分で、<br>英会話を習慣化。</h1>
-        <p class="lead" data-reveal>EN School は、短時間・高密度のレッスンで“続けられる”に特化した英会話スクール。初級〜上級まで、あなたのレベルに合わせてコーチが伴走します。</p>
-        <div class="cta-row" data-reveal>
-          <a href="#cta" class="btn primary cta">無料体験レッスンを予約</a>
-          <a href="#features" class="btn">特徴を見る</a>
-        </div>
-
-        <div class="badges" data-reveal>
-          <span class="badge">初月50%OFF キャンペーン中</span>
-          <span class="badge">スマホだけでOK</span>
-          <span class="badge">朝5時〜深夜1時対応</span>
-        </div>
-      </div>
-
-      <div class="hero-art" aria-hidden="true">
-        <div class="screen" data-reveal>
-          <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-          <div class="content">
-            <div style="display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center">
-              <div style="aspect-ratio:1/1;border-radius:14px;background:linear-gradient(135deg,#3b82f6,#22d3ee)"></div>
-              <div>
-                <h3 style="margin:0">今日のミッション</h3>
-                <p style="margin:6px 0 0;color:#cbd5e1">「自己紹介」と「道案内」を英語で言ってみよう。3分×3セットでOK！</p>
-              </div>
-            </div>
-            <div class="wave" style="margin-top:16px"></div>
+  <!-- お得な特典・メルマガキャンペーンセクション -->
+  <section id="campaign" class="campaign-banner-section">
+    <div class="container">
+      <div class="campaign-card">
+        <div class="campaign-badge">期間限定スペシャル特典</div>
+        <h2>今すぐ使える！ダブルでお得なキャンペーン</h2>
+        <p>体験レッスン後に使える「1ヶ月無料クーポン」や、メルマガ登録でもらえる豪華特典をチェックしよう。</p>
+        
+        <div class="campaign-grid">
+          <div class="campaign-item">
+            <h3>🎟 クレジット入力不要の体験</h3>
+            <p>クーポンコード入力で、<strong>今なら1ヶ月分が無料</strong>に！まずは気軽に試せます。</p>
           </div>
+          <div class="campaign-item">
+            <h3>📩 メルマガ登録特典</h3>
+            <p>「日常英会話フレーズ100選」の電子書籍 ＋ <strong>1年間無料クーポン</strong>が当たるチャンス！</p>
+          </div>
+        </div>
+
+        <div class="campaign-cta">
+          <a href="#cta" class="btn-primary">特典付きで無料体験を予約する</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- お得な特典・メルマガキャンペーンセクション -->
-<section class="campaign-banner-section">
-  <div class="container">
-    <div class="campaign-card">
-      <div class="campaign-badge">期間限定スペシャル特典</div>
-      <h2>今すぐ使える！ダブルでお得なキャンペーン</h2>
-      <p>体験レッスン後に使える「1ヶ月無料クーポン」や、メルマガ登録でもらえる豪華特典をチェックしよう。</p>
-      
-      <div class="campaign-grid">
-        <div class="campaign-item">
-          <h3>クレジット入力不要の体験</h3>
-          <p>クーポンコード入力で、<strong>今なら1ヶ月分が無料</strong>に！まずは気軽に試せます。</p>
-        </div>
-        <div class="campaign-item">
-          <h3>メルマガ登録特典</h3>
-          <p>「日常英会話フレーズ100選」の電子書籍 ＋ <strong>1年間無料クーポン</strong>をプレゼント！</p>
-        </div>
-      </div>
-
-      <div class="campaign-cta">
-        <a href="#cta" class="btn-primary">特典付きで無料体験を予約する</a>
-      </div>
+  <!-- 最終CTAセクション -->
+  <section id="cta" class="cta-section">
+    <div class="container" style="max-width: 700px; text-align: center;">
+      <h2 class="section-title">まずは無料体験から始めませんか？</h2>
+      <p class="section-subtitle">たった1分で簡単予約。しつこい勧誘はありませんので安心してご参加ください。</p>
+      <a href="#" class="btn-primary" style="font-size: 1.1rem; padding: 16px 36px;">無料体験レッスンを申し込む</a>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- 一番最後 -->
-  <script src="main.js"></script>
 </body>
 </html>
-
