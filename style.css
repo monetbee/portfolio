@@ -12,28 +12,52 @@ body {
   line-height: 1.6;
 }
 
-/* ヘッダー（ネイビーのグラデーション） */
+/* --- style.css (新しいヘッダーデザイン) --- */
+
+/* ヘッダー全体 (ブルーから、白または超薄いグレーへ) */
 .site-header {
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-  color: #fff;
-  padding: 3rem 1rem;
+  /* background: linear-gradient(135deg, #3b82f6, #22d3ee);  <- これを消す */
+  background-color: #ffffff; /* 完全に白にする。または #fcfcfc (超薄いグレー) */
+  color: #111827; /* 文字色は黒（ネイビーグレー）に */
+  
+  /* 上下の余白を広げて、ゆったりとした高級感を出す */
+  padding: 100px 20px 80px; 
+  
+  /* 下部にだけ、さりげない境界線を入れる */
+  border-bottom: 1px solid #e5e7eb; 
+  
   text-align: center;
 }
 
-.header-inner {
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
+/* 名前 (Reina Tokunaga) */
+.site-header h1 {
+  margin: 0;
+  
+  /* フォントを少し細く、洗練された印象に */
+  font-size: 2.5rem; /* 少し大きく */
+  font-weight: 700;  /* 900(極太)から700(太め)に落とす */
+  
+  /* 文字間隔をほんの少し広げて、スタイリッシュに */
+  letter-spacing: -0.02em; 
+  
+  color: #0f172a; /* より深く、高級感のある黒 */
 }
 
-@media (min-width: 600px) {
-  .header-inner {
-    flex-direction: row;
-    text-align: left;
-  }
+/* 肩書き (Web & Infrastructure Engineer) */
+.tagline {
+  margin-top: 15px; /* 名前との間隔を少し広げる */
+  font-size: 1.1rem;
+  
+  /* 完全に真っ黒ではなく、少しグレーにしてコントラストを抑える */
+  color: #64748b; 
+  
+  /* 文字を細くして、スマートな印象に */
+  font-weight: 400; 
+  opacity: 1; /* opacityは1に戻す */
+  
+  /* 文字間隔を広く */
+  letter-spacing: 0.1em; 
+  text-transform: uppercase; /* すべて大文字にしてスタイリッシュに (好みで) */
 }
 
 /* 顔写真（丸形・白い枠線つき） */
