@@ -98,16 +98,31 @@ nav a:hover {
   font-weight: bold;
 }
 
-/* --- ヒーローセクション（背景動画・霧がかった演出・レスポンシブ対応） --- */
+/* 1. 「3日坊主で終わらない」のヒーローエリアを映画のスクリーン風にする */
 .hero {
-  position: relative;
-  width: 100%;
-  min-height: 85vh;
-  display: flex;
-  align-items: center;
+  max-width: 1100px;        /* 横幅を制限して映画の画面のような比率・まとまりにする */
+  margin: 40px auto;        /* 上下に余白をとって独立させる */
+  border-radius: 16px;      /* 角を丸くしてスクリーンっぽく */
   overflow: hidden;
-  background-color: #f0f9ff;
-  padding: 60px 0;
+  position: relative;
+  background-color: #0b1329;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25); /* 影をつけて浮き上がらせる */
+}
+
+/* 2. その下に続く白いページ・エリアのベース */
+body {
+  background-color: #f8fafc; /* ページ全体の背景を少し薄い色にして、白ページを引き立てる */
+}
+
+.white-page-wrapper,
+.benefits-section {
+  background-color: #ffffff; /* ここから下を完全に白くする */
+  color: #1e293b;
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 /* 動画のサイズと配置の調整（ドアップを解消） */
