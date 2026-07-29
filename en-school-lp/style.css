@@ -98,19 +98,26 @@ nav a:hover {
   font-weight: bold;
 }
 
-/* --- ヒーローセクションを映画のスクリーン風（角丸の独立ボックス）にする --- */
+/* --- ヒーローセクション（角丸なし、高さを抑えて上部エリアに収める） --- */
 .hero {
   position: relative;
-  width: 92%;               /* 画面の端から少し余白をあける */
-  max-width: 1100px;        /* 最大幅を制限して映画のスクリーン比率のようなまとまりにする */
-  min-height: 75vh;
-  margin: 40px auto;        /* 上下に余白をとってページ中央に配置する */
-  overflow: hidden;
+  width: 100%;
+  max-width: 1100px;        /* サイト全体の最大幅に合わせる */
+  margin: 0 auto;           /* 左右中央に配置 */
+  min-height: 500px;        /* 高さをスッキリとした上部エリアに収める */
   display: flex;
   align-items: center;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* 影をつけて浮き上がらせる */
-  background-color: #0b1329;
-  padding: 60px 0;
+  overflow: hidden;
+  background-color: #0b1329; /* ダークな映像カラー */
+  border-radius: 0;         /* 角丸はつけない */
+  padding: 60px 20px;       /* 上下の余白 */
+}
+
+/* --- 全体の背景を白にする（グレーにしない） --- */
+body {
+  background-color: #ffffff;
+  color: var(--text-main);
+  margin: 0;
 }
 
 /* 動画のサイズと配置の調整（ドアップを解消） */
