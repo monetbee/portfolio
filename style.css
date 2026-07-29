@@ -220,3 +220,19 @@ body {
 h2::after {
   display: none !important;
 }
+
+/* 全体・メイン枠・カードの背景をすべて完全な白に統一 */
+body,
+.container,
+main,
+.site-header {
+  background-color: #ffffff !important;
+}
+
+/* カード部分：背景は白のまま、お気に入りの影（立体感）だけ残す */
+.section-card {
+  background-color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+  border-radius: 12px;
+}
