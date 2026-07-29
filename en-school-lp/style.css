@@ -1,5 +1,5 @@
 /* ==========================================
-   EN School LP - Modern & Clean Style
+   EN School LP - Clean & Modern Style
    ========================================== */
 
 :root {
@@ -12,7 +12,7 @@
   --primary-hover: #0369a1;
   --accent: #38bdf8;
   --line: #e2e8f0;
-  --shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.1), 0 8px 10px -6px rgba(14, 165, 233, 0.1);
+  --shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.1);
 }
 
 * {
@@ -26,7 +26,6 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-main);
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -42,7 +41,7 @@ a {
 
 /* --- ヘッダー --- */
 header {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
   position: sticky;
   top: 0;
@@ -86,19 +85,12 @@ nav a:hover {
   padding: 8px 16px;
   border-radius: 999px;
   font-weight: bold;
-  transition: background-color 0.2s;
-}
-
-.nav-cta:hover {
-  background-color: var(--primary-hover);
 }
 
 /* --- ヒーローセクション --- */
 .hero {
   background: var(--bg-accent);
   padding: 80px 0;
-  overflow: hidden;
-  position: relative;
 }
 
 .hero .inner {
@@ -122,15 +114,15 @@ nav a:hover {
 }
 
 .title {
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 900;
-  line-height: 1.2;
+  line-height: 1.3;
   margin-bottom: 16px;
-  color: #0f172a;
+  color: var(--text-main);
 }
 
 .lead {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--text-muted);
   margin-bottom: 28px;
 }
@@ -164,19 +156,18 @@ nav a:hover {
   margin-top: 8px;
 }
 
-/* --- ヒーロービジュアル（グラスモーフィズムカード） --- */
+/* --- カード・ビジュアル --- */
 .hero-art .screen {
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(14, 165, 233, 0.2);
-  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
   box-shadow: var(--shadow);
   overflow: hidden;
-  backdrop-filter: blur(10px);
 }
 
 .screen .bar {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   padding: 12px 16px;
   background: #f1f5f9;
   border-bottom: 1px solid var(--line);
@@ -190,25 +181,18 @@ nav a:hover {
 }
 
 .screen .content {
-  padding: 32px;
+  padding: 24px;
 }
 
 .screen .content h3 {
-  font-size: 1.2rem;
-  margin-bottom: 12px;
-  color: #0f172a;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--text-main);
 }
 
 .screen .content p {
   color: var(--text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 20px;
-}
-
-.wave {
-  height: 60px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(2, 132, 199, 0.05));
+  font-size: 0.9rem;
 }
 
 /* --- セクション共通 --- */
@@ -222,17 +206,15 @@ section {
   font-weight: 800;
   text-align: center;
   margin-bottom: 12px;
-  color: #0f172a;
 }
 
 .section-subtitle {
   text-align: center;
   color: var(--text-muted);
   margin-bottom: 48px;
-  font-size: 1rem;
 }
 
-/* --- レスポンシブ対応 --- */
+/* --- レスポンシブ --- */
 @media (max-width: 768px) {
   .hero .inner {
     grid-template-columns: 1fr;
