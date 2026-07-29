@@ -23,8 +23,10 @@ body {
   /* 上下の余白を広げて、ゆったりとした高級感を出す */
   padding: 100px 20px 80px; 
   
-  /* 下部にだけ、さりげない境界線を入れる */
-  border-bottom: 1px solid #e5e7eb; 
+  /* ヘッダー下の線を消す */
+  .site-header {
+    border-bottom: none !important;
+  }
   
   text-align: center;
 }
