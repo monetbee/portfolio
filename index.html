@@ -1,71 +1,86 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio | Reina Tokunaga</title>
-  <link rel="stylesheet" href="style.css">
+  <title>My Portfolio | Reina Tokunaga</title> <link rel="stylesheet" href="style.css">
+  <!-- モダンなフォント（Google Fonts）を追加 -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+
+  <!-- 1. ヘッダー＆プロフィール（顔写真つき） -->
   <header class="site-header">
-    <h1>Reina Tokunaga</h1>
-    <p class="tagline">Web制作ポートフォリオ</p>
+    <div class="header-inner">
+      <div class="profile-img-wrap">
+        <!-- assets フォルダに自分の顔写真 (profile.jpg) を入れて指定します -->
+        <img src="assets/profile.jpg" alt="Reina Tokunaga" class="profile-img">
+      </div>
+      <div class="profile-text">
+        <h1>Reina Tokunaga</h1>
+        <p class="tagline">Web & Infrastructure Engineer</p>
+      </div>
+    </div>
   </header>
 
-<section class="about">
-  <h2>About Me</h2>
-  <p>
-    Web開発（開発実務1年）とインフラ運用保守（Windows-Serer/Linux）の両方の経験を合わせ持つハイブリッドエンジニアです。LP制作からサーバー構築、CI/CD環境の整備まで、一気通貫での自走が可能です。
-  </p>
-</section>
+  <main class="container">
+    <!-- 2. 自己紹介 -->
+    <section class="about section-card">
+      <h2>About Me</h2>
+      <p>
+        Web開発（実務1年）とインフラ運用保守（Windows Server/Linux 8ヶ月）の両方の経験を合わせ持つハイブリッドエンジニアです。LP制作からサーバー構築、CI/CD環境の整備まで、一気通貫での自走が可能です。
+      </p>
+    </section>
 
-<section class="contact">
-  <h2>Contact</h2>
-  <p>e-mail: <a href="mailto:reina.tokunaga.work@gmail.com">reinatokunagamail@gmaail.com</a></p>
-  <p>Github: <a href="https://github.com/monetbee" target="_blank">GitHub</a></p>
-</section>
-
-
-  <main>
-    <section class="works">
+    <!-- 3. 制作実績（カード型） -->
+    <section class="works section-card">
       <h2>制作実績</h2>
-
       <div class="cards">
-        <a href="https://portfolio-pied-one-10og30au9c.vercel.app/esports-lp/" class="card" target="_blank">
-          <div class="thumb">
-            <img src="../Portfolio_Front/assets/hero.jpg" alt="Esports LP">
-          </div>
-
-
-          <h3>Esports LP</h3>
-          <p>HTML / CSS / JavaScript / レスポンシブ対応</p>
-        </a>
-
-        <a href="https://portfolio-pied-one-10og30au9c.vercel.app/en-school-lp/" class="card" target="_blank">
-          <div class="thumb">
-            <img src="../Portfolio_Front/assets/en-school_logo.svg" alt="Esports LP">
-          </div>
-          <h3>英会話スクール LP</h3>
-          <p>HTML / CSS / JavaScript / レスポンシブ対応</p>
-        </a>
-
-
-
-        <!-- 今後ここに作品を追加 -->
-
-
-
-
-
         
+        <!-- 作品1 -->
+        <div class="card">
+          <div class="thumb">
+            <img src="assets/hero.jpg" alt="Esports LP">
+          </div>
+          <div class="card-body">
+            <h3>Esports LP</h3>
+            <p class="tech-tags">HTML / CSS / JavaScript / レスポンシブ対応</p>
+            <div class="card-links">
+              <a href="https://portfolio-pied-one-10og30au9c.vercel.app/esports-lp/" class="btn" target="_blank">サイトを見る</a>
+              <a href="https://github.com/monetbee/portfolio/tree/main/esports-lp" class="btn btn-outline" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 作品2 -->
+        <div class="card">
+          <div class="thumb">
+            <img src="assets/en-school_logo.svg" alt="英会話スクール LP">
+          </div>
+          <div class="card-body">
+            <h3>英会話スクール LP</h3>
+            <p class="tech-tags">HTML / CSS / JavaScript / レスポンシブ対応</p>
+            <div class="card-links">
+              <a href="https://portfolio-pied-one-10og30au9c.vercel.app/en-school-lp/" class="btn" target="_blank">サイトを見る</a>
+              <a href="https://github.com/monetbee/portfolio/tree/main/en-school-lp" class="btn btn-outline" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+
       </div>
+    </section>
+
+    <!-- 4. 連絡先 -->
+    <section class="contact section-card">
+      <h2>Contact</h2>
+      <p>e-mail: <a href="mailto:reina.tokunaga.work@gmail.com">reina.tokunaga.work@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/monetbee" target="_blank">@monetbee</a></p>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2025 Reina Tokunaga</p>
   </footer>
+
 </body>
 </html>
