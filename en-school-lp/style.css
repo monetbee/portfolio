@@ -2,7 +2,16 @@
    EN School LP - Clean & Modern Style
    ========================================== */
 
-:root {
+
+/* ロゴの大きさを綺麗に調整する */
+header img,
+.logo img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+   :root {
   --bg-primary: #ffffff;
   --bg-secondary: #f8fafc;
   --bg-accent: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
