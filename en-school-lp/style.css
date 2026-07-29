@@ -98,29 +98,19 @@ nav a:hover {
   font-weight: bold;
 }
 
-/* --- ヒーローセクション（角丸なし、高さを抑えて上部エリアに収める） --- */
+/* --- ヒーローセクション（元のデザインのまま、高さを上部に抑える修正のみ追加） --- */
 .hero {
   position: relative;
   width: 100%;
-  max-width: 1100px;        /* サイト全体の最大幅に合わせる */
-  margin: 0 auto;           /* 左右中央に配置 */
-  min-height: 500px;        /* 高さをスッキリとした上部エリアに収める */
+  height: 480px;            /* ← 高さを画面全体の約1/3程度（480px）に固定 */
   display: flex;
   align-items: center;
-  overflow: hidden;
-  background-color: #0b1329; /* ダークな映像カラー */
-  border-radius: 0;         /* 角丸はつけない */
-  padding: 60px 20px;       /* 上下の余白 */
+  overflow: hidden;          /* ← 動画が下にはみ出ないように遮断 */
+  background-color: #f0f9ff;
+  padding: 40px 0;
 }
 
-/* --- 全体の背景を白にする（グレーにしない） --- */
-body {
-  background-color: #ffffff;
-  color: var(--text-main);
-  margin: 0;
-}
-
-/* 動画のサイズと配置の調整（ドアップを解消） */
+/* 動画のサイズと配置の調整 */
 .hero-video {
   position: absolute;
   top: 0;
@@ -132,7 +122,7 @@ body {
   opacity: 0.7;
 }
 
-/* 霧（白っぽいフィルター）を薄くする */
+/* 霧（白っぽいフィルター） */
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -143,7 +133,7 @@ body {
   z-index: 1;
 }
 
-/* コンテンツ（文言やカード）を前面に配置 */
+/* コンテンツ */
 .hero .container {
   position: relative;
   z-index: 2;
@@ -278,10 +268,16 @@ body {
   font-size: 0.95rem;
 }
 
-/* --- セクション共通 --- */
+/* --- セクション共通（ここから下が白背景） --- */
 section {
   padding: 80px 0;
+  background-color: var(--bg-primary);
   border-top: 1px solid var(--line);
+}
+
+.white-section-area {
+  background-color: #ffffff;
+  width: 100%;
 }
 
 .section-title {
@@ -308,39 +304,27 @@ section {
   color: #0369a1;
 }
 
-/* --- 予約完了テキストの下から始まる白いエリア --- */
-.white-section-area {
-  background-color: #ffffff; /* 背景を完全な白にする */
-  padding: 80px 20px;        /* 上下にたっぷりと余白を取ってページ感を出す */
-  width: 100%;
-}
-
-/* 白いエリアの中身の最大幅を揃える場合 */
-.white-section-area .container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* --- キャンペーンセクション（完全にフラットにする） --- */
+/* --- キャンペーンセクション --- */
 .campaign-banner-section {
   padding: 80px 0;
-  background-color: var(--bg-primary); /* 背景をページ全体と同じ白にする */
+  background-color: var(--bg-primary);
 }
 
 .campaign-card {
   max-width: 1100px;
   margin: 0 auto;
-  background: none;        /* 水色のグラデーション背景を完全に消す */
-  border: none;            /* 枠線を消す */
-  border-radius: 0;        /* 角丸を消す */
-  padding: 0;              /* 余白をリセット */
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
   text-align: center;
-  box-shadow: none;        /* 影を消す */
+  box-shadow: none;
 }
 
 /* --- レスポンシブ --- */
 @media (max-width: 768px) {
   .hero {
+    height: auto;
     min-height: auto;
     padding: 40px 0;
   }
