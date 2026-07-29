@@ -277,93 +277,78 @@ section {
   color: #0369a1;
 }
 
-/* --- キャンペーンカードのスタイル --- */
+/* --- キャンペーンセクション（ページ全体に自然に馴染ませる） --- */
 .campaign-banner-section {
-  padding: 60px 0;
-  background-color: #f8fafc;
+  padding: 80px 0;
+  background-color: var(--bg-primary); /* ページの背景色に統一 */
 }
 
 .campaign-card {
-  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-  border: 1px solid #bae6fd;
-  border-radius: 20px;
-  padding: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: transparent; /* 独自の背景色をなくす */
+  border: none;            /* 枠線をなくす */
+  border-radius: 0;        /* 角丸をなくす */
+  padding: 0;              /* 余分な内側余白をリセット */
   text-align: center;
-  box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.1);
+  box-shadow: none;        /* 影をなくす */
 }
 
 .campaign-badge {
   display: inline-block;
-  background-color: #0284c7;
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: bold;
-  padding: 4px 12px;
+  background-color: #bae6fd;
+  color: #0369a1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 12px;
   border-radius: 999px;
-  margin-bottom: 12px;
-  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-transform: none;
 }
 
 .campaign-card h2 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 800;
-  color: #0f172a;
+  color: var(--text-main);
   margin-bottom: 12px;
 }
 
 .campaign-card p {
-  color: #475569;
-  font-size: 0.95rem;
-  margin-bottom: 32px;
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 40px;
 }
 
 .campaign-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  margin-bottom: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
   text-align: left;
 }
 
 .campaign-item {
-  background: #ffffff;
-  padding: 24px;
-  border-radius: 12px;
-  border: 1px solid #e2e8f0;
+  background: var(--bg-secondary); /* 各アイテムは薄い背景でスッキリ整える */
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
 }
 
 .campaign-item h3 {
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: bold;
-  color: #0f172a;
-  margin-bottom: 8px;
+  color: var(--text-main);
+  margin-bottom: 10px;
 }
 
 .campaign-item p {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   margin-bottom: 0;
+  color: var(--text-muted);
 }
 
 .campaign-cta {
   margin-top: 20px;
-}
-
-/* --- レスポンシブ --- */
-@media (max-width: 768px) {
-  .hero {
-    min-height: auto;
-    padding: 40px 0;
-  }
-  .hero .inner {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .cta-row {
-    justify-content: center;
-  }
-  nav {
-    display: none;
-  }
 }
 
 /* --- ミッションカードのホバー演出 --- */
