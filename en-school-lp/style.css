@@ -65,7 +65,6 @@ header .container {
   gap: 8px;
 }
 
-/* ロゴ画像のサイズ調整 */
 header img,
 .logo img {
   width: 36px;
@@ -111,9 +110,7 @@ nav a:hover {
   padding: 60px 0;
 }
 
-/* 動画のレスポンシブ・自動フィット設定 */
-
-/* --- 動画のサイズと配置の調整（ドアップを解消） --- */
+/* 動画のサイズと配置の調整（ドアップを解消） */
 .hero-video {
   position: absolute;
   top: 0;
@@ -122,23 +119,21 @@ nav a:hover {
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  opacity: 0.7; /* 動画の透明度を上げて、しっかり見えるように調整 */
+  opacity: 0.7;
 }
 
-/* --- 霧（白っぽいフィルター）を薄くする --- */
+/* 霧（白っぽいフィルター）を薄くする */
 .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.3); /* フィルターを薄い白（透明度0.3）にして動画を透けさせる */
+  background: rgba(255, 255, 255, 0.3);
   z-index: 1;
 }
 
-/* コンテンツ（文言）を前面に配置 */
-
-/* --- コンテンツ（文言やカード）を前面に配置 --- */
+/* コンテンツ（文言やカード）を前面に配置 */
 .hero .container {
   position: relative;
   z-index: 2;
@@ -208,13 +203,39 @@ nav a:hover {
   margin-top: 8px;
 }
 
-/* --- カード・ビジュアル --- */
+/* --- ミッションカードのホバー演出 --- */
 .hero-art .screen {
   background: #ffffff;
   border: 1px solid var(--line);
   border-radius: 16px;
   box-shadow: var(--shadow);
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.hero-art .screen:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px -10px rgba(14, 165, 233, 0.25);
+}
+
+.mission-hover-text {
+  display: inline-block;
+  margin-top: 14px;
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 6px 14px;
+  border-radius: 999px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.hero-art .screen:hover .mission-hover-text {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .screen .bar {
@@ -280,18 +301,18 @@ section {
 /* --- キャンペーンセクション（ページ全体に自然に馴染ませる） --- */
 .campaign-banner-section {
   padding: 80px 0;
-  background-color: var(--bg-primary); /* ページの背景色に統一 */
+  background-color: var(--bg-primary);
 }
 
 .campaign-card {
   max-width: 1100px;
   margin: 0 auto;
-  background: transparent; /* 独自の背景色をなくす */
-  border: none;            /* 枠線をなくす */
-  border-radius: 0;        /* 角丸をなくす */
-  padding: 0;              /* 余分な内側余白をリセット */
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
   text-align: center;
-  box-shadow: none;        /* 影をなくす */
+  box-shadow: none;
 }
 
 .campaign-badge {
@@ -303,7 +324,6 @@ section {
   padding: 6px 12px;
   border-radius: 999px;
   margin-bottom: 20px;
-  text-transform: none;
 }
 
 .campaign-card h2 {
@@ -328,7 +348,7 @@ section {
 }
 
 .campaign-item {
-  background: var(--bg-secondary); /* 各アイテムは薄い背景でスッキリ整える */
+  background: var(--bg-secondary);
   padding: 32px;
   border-radius: 16px;
   border: 1px solid var(--line);
@@ -351,39 +371,20 @@ section {
   margin-top: 20px;
 }
 
-/* --- ミッションカードのホバー演出 --- */
-.hero-art .screen {
-  background: #ffffff;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.hero-art .screen:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 35px -10px rgba(14, 165, 233, 0.25);
-}
-
-/* 「やってみよう！」の初期状態（隠れている） */
-.mission-hover-text {
-  display: inline-block;
-  margin-top: 14px;
-  background-color: var(--primary);
-  color: #fff;
-  font-size: 0.85rem;
-  font-weight: bold;
-  padding: 6px 14px;
-  border-radius: 999px;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* カードにホバーしたときに「やってみよう！」をフワッと浮き上がらせる */
-.hero-art .screen:hover .mission-hover-text {
-  opacity: 1;
-  transform: translateY(0);
+/* --- レスポンシブ --- */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 40px 0;
+  }
+  .hero .inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .cta-row {
+    justify-content: center;
+  }
+  nav {
+    display: none;
+  }
 }
