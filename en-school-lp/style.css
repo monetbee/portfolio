@@ -185,7 +185,7 @@ nav a:hover {
 .btn-primary {
   background-color: var(--primary);
   color: #fff;
-  padding: 14px 28px;
+  padding: 20px 28px;
   border-radius: 12px;
   font-weight: bold;
   box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
