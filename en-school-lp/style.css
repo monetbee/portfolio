@@ -183,7 +183,6 @@ nav a:hover {
 }
 
 .btn-primary {
-  transform: translateY(20px);
   background-color: var(--primary);
   color: #fff;
   padding:px 28px;
