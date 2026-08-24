@@ -42,6 +42,7 @@ a {
 /* --- ヘッダー --- */
 header {
   background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   position: sticky;
   top: 0;
@@ -331,9 +332,26 @@ section {
   .hero .inner {
     grid-template-columns: 1fr;
     text-align: center;
+    min-width: 0;
+  }
+  .title {
+    font-size: clamp(1.7rem, 7vw, 2.2rem);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+  .title br {
+    display: none;
+  }
+  .lead {
+    font-size: 0.95rem;
   }
   .cta-row {
     justify-content: center;
+  }
+  .hero-art,
+  .hero-art .screen {
+    min-width: 0;
+    width: 100%;
   }
   nav {
     display: none;
